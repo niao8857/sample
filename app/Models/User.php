@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,7 +11,7 @@ class User extends Authenticatable
 
     /**
      * The attributes that are mass assignable.
-     *
+     * 只有被包含在内的属性才能够正常更新
      * @var array
      */
     protected $fillable = [
@@ -26,4 +26,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    protected $table = 'users';
 }
